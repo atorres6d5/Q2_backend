@@ -2,17 +2,9 @@ const model = require('../model/model.js')
 
 
 function getAll(req, res, next){
-  let roster = model.getAll()
-  return res.status(200).send({
-    data: roster
+  model.getAllPlayers().then(result=>{
+    return res.status(200).send(result)
   })
 }
-
-
-
-
-
-
-
 
 module.exports = {getAll}

@@ -4,20 +4,20 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "knex":"knex"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "knex": "^0.14.0",
     "morgan": "^1.9.0",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "pg": "^7.4.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
-  }
+  "devDependencies": {}
 }
