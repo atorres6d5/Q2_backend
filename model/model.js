@@ -7,3 +7,6 @@ function getAll(){
   let roster = JSON.parse(fs.readFileSync(dbpath, format))
   return roster
 }
+
+
+module.exports={getAll}

@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 
 
-app.use('/wreslers', routes)
+app.use('/wrestlers', routes)
 
 app.use((err, req, res, next) => {
   console.log(err)
