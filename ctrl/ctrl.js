@@ -7,4 +7,24 @@ function getAll(req, res, next){
   })
 }
 
-module.exports = {getAll}
+function getOneTeam(req, res, next){
+  model.getOneTeam(req.params.id).then(result=>{
+    return res.status(200).send(result)
+  })
+}
+
+function findCaptain(req, res, next){
+  model.findCaptains().then(result=>{
+    console.log(result);
+    return res.status(200).send(result)
+  })
+}
+
+function getMatches(req, res, next){
+  model.getAllMatches().then(result=>{
+    return res.status(200).send(result)
+  })
+}
+
+
+module.exports = {getAll, getOneTeam, findCaptain, getMatches}

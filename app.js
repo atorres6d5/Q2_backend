@@ -4,6 +4,10 @@ const port = process.env.PORT || 3000
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const routes = require('./routes/routes.js')
+const cors = require('cors')
+
+
+app.use(cors())
 
 
 app.use(bodyParser.json())
