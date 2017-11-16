@@ -37,7 +37,6 @@ function delMatch(req, res, next){
 
 function newMatch(req, res, next){
   let body = req.body
-  //console.log(body)
   model.newMatch(body).then(result=>{
     return res.status(200).send(result)
   })
