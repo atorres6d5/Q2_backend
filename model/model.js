@@ -34,4 +34,8 @@ function delMatch(matchID){
 
 
 
+<<<<<<< HEAD
 module.exports={getAllPlayers, getOneTeam, findCaptains, getAllMatches, delMatch}
+=======
+module.exports={getAllPlayers, getOneTeam, findCaptains, getAllMatches}
+>>>>>>> cd6b9c3ebc5e28f52d72d2c97faddbf3485c0623

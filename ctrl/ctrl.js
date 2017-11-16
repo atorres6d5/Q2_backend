@@ -40,5 +40,18 @@ function newMatch(){
   })
 }
 
+function delMatch(req, res, next){
+  let matchID = req.params.matchID
+  model.delMatch(matchID).then(result=>{
+    return res.status(200).send(reslut)
+  })
+}
+
+function newMatch(){
+  model.newMatch().then(result=>{
+    return res.status(200).send(result)
+  })
+}
+
 
 module.exports = {getAll, getOneTeam, findCaptain, getMatches, delMatch, newMatch}
