@@ -28,11 +28,30 @@ function getAllMatches(){
 
 function delMatch(matchID){
   return knex('matches')
-  .where('matches.id', matchID)
+  .where('id', matchID)
   .del()
 }
 
+function newMatch(data){
+  console.log(data)
+  return knex('matches')
+  .insert(data)
+}
 
 
+function updateMatch(id, winner){
+  return knex('matches')
+  .where('id', id)
+  .update('result', winner)
+}
 
-module.exports={getAllPlayers, getOneTeam, findCaptains, getAllMatches, delMatch}
+
+module.exports={
+  getAllPlayers,
+  getOneTeam,
+  findCaptains,
+  getAllMatches,
+  newMatch,
+  delMatch,
+  updateMatch
+}

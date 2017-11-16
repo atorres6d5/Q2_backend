@@ -38,7 +38,7 @@ CREATE TABLE Stats(
 );
 
 CREATE TABLE Matches(
-  id INT PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   home_team INT REFERENCES Teams(id),
   away_team INT REFERENCES Teams(id),
   match_date  varchar(50),
@@ -88,13 +88,13 @@ VALUES
 
 
 INSERT INTO Matches
-(id, home_team, away_team, match_date, result)
+(home_team, away_team, match_date, result)
 VALUES
-(1, 1, 3, '09/11/2010', 1),
-(2, 2, 4, '09/18/2010', 4),
-(3, 1, 2, '10/11/2010', 1),
-(4, 3, 4, '10/18/2010', 4),
-(5, 1, 4, '01/17,2010', 1),
-(6, 3, 2, '01/24/2011', 2);
+(1, 3, '09/11/2010', 1),
+(2, 4, '09/18/2010', 4),
+(1, 2, '10/11/2010', 1),
+(3, 4, '10/18/2010', 4),
+(1, 4, '01/17,2010', 1),
+(3, 2, '01/24/2011', 2);
 
 select * from Matches
