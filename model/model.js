@@ -24,13 +24,14 @@ function getAllMatches(){
   .join('teams as teams2', 'away_team', 'teams2.id')
   .join('teams as winner', 'result', 'winner.id')
   .select('matches.id','teams.team_name as home_team', 'teams2.team_name as away_team', 'winner.team_name as winner')
-
-  //.column('matches.home_team', 'matches.away_team', 'matches.result')
-
-
-  //return knex('matches').select('teams.team_name AS homeTeam')
-  //.innerJoin('teams', 'matches.home_team', 'teams.id')
 }
+
+function delMatch(matchID){
+  return knex('matches')
+  .where('matches.id', matchID)
+  .del()
+}
+
 
 
 module.exports={getAllPlayers, getOneTeam, findCaptains, getAllMatches}
