@@ -1,6 +1,6 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('Matches', (table)=>{
+  return knex.schema.createTable('matches', (table)=>{
     table.increments()
     table.integer('home_team').notNullable()
     //table.foreign('home_team').references('Teams.id')
@@ -14,5 +14,5 @@ exports.up = function(knex, Promise) {
     };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('Matches')
+  return knex.schema.dropTable('matches')
 };

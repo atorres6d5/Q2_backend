@@ -1,10 +1,10 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('Players').del()
+  return knex('players').del()
     .then(function () {
       // Inserts seed entries
-      return knex('Players').insert([
+      return knex('players').insert([
         {id: 1, player_name: 'Oliver Wood', team_id:1, position_id:1, is_captain:true},
         {id: 2, player_name: 'Fred Weasley', team_id:1, position_id:2, is_captain:false},
         {id: 3, player_name: 'George Weasley', team_id:1, position_id:2, is_captain:false},
