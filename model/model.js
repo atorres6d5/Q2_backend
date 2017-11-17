@@ -46,6 +46,11 @@ function updateMatch(id, winner){
   .update('result', winner)
 }
 
+function teamRoster(teamID){
+  return knex('players')
+  .where('players.team_id', teamID)
+}
+
 
 module.exports={
   getAllPlayers,
@@ -54,5 +59,6 @@ module.exports={
   getAllMatches,
   newMatch,
   delMatch,
-  updateMatch
+  updateMatch,
+  teamRoster
 }

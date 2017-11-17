@@ -50,8 +50,16 @@ function updateMatch(req, res, next){
   })
 }
 
+function teamRoster(req, res, next){
+  let teamID = req.params.teamID
+  console.log(teamID);
+  model.teamRoster(teamID).then(result=>{
+    console.log(result);
+    return res.status(200).send(result)
+  })
+}
 
 
 
 
-module.exports = {getAll, getOneTeam, findCaptain, getMatches, delMatch, newMatch, updateMatch}
+module.exports = {getAll, getOneTeam, findCaptain, getMatches, delMatch, newMatch, updateMatch, teamRoster}
