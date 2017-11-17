@@ -13,5 +13,9 @@ exports.seed = function(knex, Promise) {
         {id: 6, player_name: 'Kaite Bell', team_id:1, position_id:3, is_captain:false},
         {id: 7, player_name: 'Harry Potter', team_id:1, position_id:4, is_captain:false}
       ]);
-    });
+    }).then(() => {
+      return knex.raw(
+        `SELECT setval('players_id_seq', (SELECT MAX(id) FROM players));`
+      );
+    })
 };

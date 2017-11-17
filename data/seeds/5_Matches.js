@@ -12,5 +12,9 @@ exports.seed = function(knex, Promise) {
         {id: 5, home_team:1, away_team:4, match_date:'10/20/2017', result:1},
         {id: 6, home_team:3, away_team:2, match_date:'10/27/2017', result:2}
       ]);
-    });
+    }).then(() => {
+      return knex.raw(
+        `SELECT setval('matches_id_seq', (SELECT MAX(id) FROM matches));`
+      );
+    })
 };

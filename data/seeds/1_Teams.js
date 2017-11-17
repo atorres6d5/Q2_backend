@@ -10,5 +10,9 @@ exports.seed = function(knex, Promise) {
         {id: 3, team_name: 'Ravenclaw'},
         {id: 4, team_name: 'Slytherin'}
       ]);
-    });
+    }).then(() => {
+      return knex.raw(
+        `SELECT setval('teams_id_seq', (SELECT MAX(id) FROM teams));`
+      );
+    })
 };

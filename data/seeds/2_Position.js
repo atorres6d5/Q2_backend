@@ -10,5 +10,9 @@ exports.seed = function(knex, Promise) {
         {id: 3, position_type: 'Chaser'},
         {id: 4, position_type: 'Seeker'}
       ]);
-    });
+    }).then(() => {
+      return knex.raw(
+        `SELECT setval('position_id_seq', (SELECT MAX(id) FROM position));`
+      );
+    })
 };
