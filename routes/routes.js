@@ -8,7 +8,7 @@ router.get('/teams/:id', ctrl.getOneTeam)
 router.get('/matches', ctrl.getMatches)
 router.delete('/matches/:matchID', ctrl.delMatch)
 router.post('/matches', ctrl.newMatch)
-router.put('/matches/:matchID', ctrl.updateMatch)
+router.patch('/matches/:matchID', ctrl.updateMatch)
 
 
 

@@ -29,7 +29,7 @@ function getMatches(req, res, next){
 
 function delMatch(req, res, next){
   let matchID = req.params.matchID
-  console.log(matchID)
+  //console.log(matchID)
   model.delMatch(matchID).then(result=>{
     return res.sendStatus(204).send(result)
   })

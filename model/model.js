@@ -23,7 +23,7 @@ function getAllMatches(){
   .join('teams', 'home_team', 'teams.id')
   .join('teams as teams2', 'away_team', 'teams2.id')
   .leftJoin('teams as winner', 'result', 'winner.id')
-  .select('matches.id', 'matches.match_date', 'teams.team_name as home_team', 'teams2.team_name as away_team', 'winner.team_name as winner')
+  .select('matches.id', 'matches.match_date', 'teams.team_name as home_team', 'teams2.team_name as away_team', 'winner.team_name as winner', 'teams.id as homeTeamId', 'teams2.id as awayTeamId')
 }
 
 function delMatch(matchID){
@@ -40,6 +40,7 @@ function newMatch(data){
 
 
 function updateMatch(id, winner){
+  console.log(id)
   return knex('matches')
   .where('id', id)
   .update('result', winner)
